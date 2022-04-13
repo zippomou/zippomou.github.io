@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>数据结构与算法s on 白夜的zippo打火机</title>
+    <link>http://zippomou.github.io/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/</link>
+    <description>Recent content in 数据结构与算法s on 白夜的zippo打火机</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 13 Apr 2022 12:28:05 +0800</lastBuildDate><atom:link href="http://zippomou.github.io/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>lt_offer_14-剪绳子</title>
+      <link>http://zippomou.github.io/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/lt_offer_14/</link>
+      <pubDate>Wed, 13 Apr 2022 12:28:05 +0800</pubDate>
+      
+      <guid>http://zippomou.github.io/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/lt_offer_14/</guid>
+      <description>题目 给你一根长度为 n 的绳子，请把绳子剪成整数长度的 m 段（m、n都是整数，n&amp;gt;1并且m&amp;gt;1），每段绳子的长度记为 k[0],k[1]&amp;hellip;k[m-1] 。请问 k[0]k[1]&amp;hellip;*k[m-1] 可能的最大乘积是多少？例如，当绳子的长度是8时，我们把它剪成长度分别为2、3、3的三段，此时得到的最大乘积是18。
+解题报告 先使用记忆化搜索 定义dfs(x)为将x至少拆为2部分的乘积的最大值，注意在转化时，对于x&amp;gt;x， x不是一定要拆开，所以dfs(x)=max(dfs(x)*(x-x), (x-x)*x)
+func cuttingRope(n int) int { var dfs func(x int) int cache:=make(map[int]int) dfs = func (x int) int { if x==1 { return 1 } if v,ok:=cache[x];ok { return v } ans:=0 for i:=1;i&amp;lt;x;i++ { ans = maxInt(ans, dfs(x-i)*i, (x-i)*i) } cache[x]=ans return ans } return dfs(n) } func maxInt(nums ...int) int { r:=-1 for i:=range nums { if r&amp;lt;nums[i] { r=nums[i] } } return r } 将记忆化搜索转化成动态规划,转化关系dp(x)=max(dp(x)*(x-x), (x-x)*x)， x依赖于比它小的x，所以从小到达遍历</description>
+    </item>
+    
+  </channel>
+</rss>
